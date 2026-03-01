@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WMSU Merch – Official College Merchandise Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <h1>🏫 WMSU Merch</h1>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Colleges</a>
+        <a onclick="openLogin()">Login</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>🎓 Wear Your College. Represent WMSU with Pride.</h2>
+    <p>Official merchandise for every college in Western Mindanao State University.</p>
+
+    <ul>
+        <li>🔐 Secure Student Login</li>
+        <li>🏫 College-Based Collections</li>
+        <li>🛒 Easy Ordering System</li>
+    </ul>
+
+    <a class="btn" onclick="openLogin()">Login to Start Shopping</a>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+    <h3>Why Use WMSU Merch?</h3>
+    <ul>
+        <li>✔ Official college-approved designs</li>
+        <li>✔ Exclusive merchandise per college</li>
+        <li>✔ High-quality materials</li>
+        <li>✔ Student-friendly pricing</li>
+        <li>✔ Organized by college to avoid wrong purchases</li>
+        <li>✔ Secure login for WMSU students only</li>
+    </ul>
+    <p style="margin-top:25px;">
+        Each college has its own identity — and now, its own official merch collection.
+    </p>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+    <h3>Trusted by WMSU Students</h3>
+    <p>⭐ Partnered with different colleges and student organizations</p>
+    <p>📸 Real students wearing merch during campus events</p>
+    <p>💬 “It’s convenient because I can directly choose my college merch after logging in.”</p>
+    <p style="margin-top:20px;font-weight:600;">
+        Built for WMSU students, by WMSU innovators.
+    </p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+    <h3>How It Works</h3>
+    <div class="steps">
+        <div class="step-box">1️⃣ Login using your Student ID</div>
+        <div class="step-box">2️⃣ Choose your College</div>
+        <div class="step-box">3️⃣ Browse exclusive college merchandise</div>
+        <div class="step-box">4️⃣ Add to cart and checkout</div>
+        <div class="step-box">5️⃣ Pick up on campus or choose delivery</div>
+    </div>
+    <p style="margin-top:30px;font-weight:600;">Simple. Organized. Proudly WMSU.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>📍 Campus Store Location</p>
+    <p>📧 Official Email</p>
+    <p>📞 Contact Number</p>
+    <p>🔁 Return & Exchange Policy</p>
+    <p>📱 Official Social Media Pages</p>
+    <p>⏰ Store Hours</p>
+
+    <p class="copyright">
+        © 2026 WMSU Merch Portal – Western Mindanao State University
+    </p>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLogin()">&times;</span>
+        <h3>Student Login</h3>
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" placeholder="Enter your Student ID">
+        <label for="college">Select College:</label>
+        <select id="college">
+            <option value="">--Choose your College--</option>
+            <option value="College of Science">College of Science</option>
+            <option value="College of Engineering">College of Engineering</option>
+            <option value="College of Education">College of Education</option>
+            <option value="College of Arts">College of Arts</option>
+            <option value="College of Law">College of Law</option>
+        </select>
+        <div class="error" id="loginError"></div>
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+</body>
+</html>
