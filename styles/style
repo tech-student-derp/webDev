@@ -1,0 +1,248 @@
+:root{
+    --primary:#2E7D32;  
+    --secondary:#66BB6A;  
+    --dark:#222;
+    --light:#ebebeb;
+    --white:#fcfcfc;
+}
+    
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat', sans-serif;
+}
+
+body{
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
+}
+
+nav{
+    background:var(--white);
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h1{
+    color:var(--primary);
+    font-size:20px;
+    font-weight:700;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+    margin-left:25px;
+    cursor:pointer;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.hero{
+    background:linear-gradient(rgba(46,125,50,0.85), rgba(46,125,50,0.85)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644');
+    background-size:cover;
+    background-position:center;
+    color:var(--white);
+    text-align:center;
+    padding:120px 8%;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.hero ul{
+    list-style:none;
+    margin-bottom:30px;
+}
+
+.hero ul li{
+    margin:8px 0;
+    font-weight:500;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:var(--secondary);
+    color:var(--white);
+    text-decoration:none;
+    font-weight:600;
+    border-radius:30px;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    background:#57a05b;
+    transform:translateY(-3px);
+}
+
+section{
+    padding:80px 8%;
+    text-align:center;
+}
+
+section h3{
+    font-size:30px;
+    margin-bottom:40px;
+    color:var(--primary);
+}
+
+.benefits ul{
+    list-style:none;
+    max-width:700px;
+    margin:auto;
+    text-align:left;
+}
+
+.benefits ul li{
+    padding:10px 0;
+    font-weight:500;
+}
+
+.proof{
+    background:var(--white);
+}
+
+.proof p{
+    max-width:700px;
+    margin:10px auto;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.hero h2, .hero p, .hero ul, .btn {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+}
+
+.hero h2 { animation-delay: 0.2s; }
+.hero p { animation-delay: 0.4s; }
+.hero ul { animation-delay: 0.6s; }
+.btn { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.benefits ul li, .proof p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s forwards;
+}
+
+.benefits ul li:nth-child(1) { animation-delay: 0.2s; }
+.benefits ul li:nth-child(2) { animation-delay: 0.3s; }
+.benefits ul li:nth-child(3) { animation-delay: 0.4s; }
+.benefits ul li:nth-child(4) { animation-delay: 0.5s; }
+.benefits ul li:nth-child(5) { animation-delay: 0.6s; }
+.benefits ul li:nth-child(6) { animation-delay: 0.7s; }
+
+/* STEPS HOVER EFFECT */
+.step-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 6% auto;
+    border-radius: 8px;
+    padding: 18px;
+    width: 92%;
+    max-width: 420px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-content input[type="text"],
+.modal-content select {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 6px 0 12px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: #b00020;
+    min-height: 20px;
+    margin-bottom: 8px;
+}
+
+.btn, .modal-content button {
+    display: inline-block;
+    background: #0a74da;
+    color: #fff;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal-content .btn { margin-left: 8px; }
