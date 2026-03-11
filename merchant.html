@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>MERCHANDISE STORE</title>
+  <link rel="stylesheet" href="styles/merchantstyle.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Merch Checkout</h2>
+
+    <div class="merch-info">
+        <img src="merch.png" alt="Merch">
+        <p>Limited Edition Hoodie</p>
+        <div class="price" id="priceDisplay"> </div>
+
+        <div class="payment-method">
+            <h3>Select Payment Method</h3>
+
+            <label class="method">
+                GCash
+                <input type="radio" name="payment">
+            </label>
+
+            <label class="method">
+                Paymaya
+                <input type="radio" name="payment">
+            </label>
+
+            <label class="method">
+                Cash on Delivery
+                <input type="radio" name="payment">
+            </label>
+        </div>
+
+        <form>
+            <button type="button" onclick="window.location.href='success.html'">Confirm Payment</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
