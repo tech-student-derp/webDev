@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Wmsu Merch</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="header">
+    <h2>Western Mindanao State University</h2>
+    <h3>College Merch Store</h3>
+</div>
+
+<div class="overlay"></div>
+
+<div class="selection">
+    <h3>Select Your College Department</h3>
+    <select id="department" onchange="showProducts()">
+        <option value="">-- Choose Department --</option>
+        <option value="engineering">College of Engineering</option>
+        <option value="business">College of Business Administration</option>
+        <option value="education">College of Teacher Education</option>
+        <option value="ccs">College of Computing Studies</option>
+        <option value="cswcd">College of Social Work and Community Development</option>
+        <option value="ca">College of Architecture</option>
+        <option value="cla">College of Liberal Arts</option>
+    </select>
+</div>
+
+<div class="products" id="productList"></div>
+
+<script>
+function showProducts() {
+    const dept = document.getElementById("department").value;
+    const productList = document.getElementById("productList");
+
+    let products = "";
+
+    if (dept === "engineering") {
+        products = `
+        <div class="card">
+            <img src="geo.jpg">
+            <h4>GE Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="black.jpg">
+            <h4>GE Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="white.jpg">
+            <h4>GE Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="jacket.jpg">
+            <h4>GE Jacket</h4>
+            <p class="price">₱899</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="jacket2.jpg">
+            <h4>GE Jacket</h4>
+            <p class="price">₱899</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="g1.jpg">
+            <h4>GE Lanyard</h4>
+            <p class="price">₱99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="arm.jpg">
+            <h4>GE Arm sleeve</h4>
+            <p class="price">₱899</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="stickers.jpg">
+            <h4>GE Stickers</h4>
+            <p class="price">₱10</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="cepolo.jpg">
+            <h4>CE Polo</h4>
+            <p class="price">₱650</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="ceshirt.jpg">
+            <h4>CE Shirt</h4>
+            <p class="price">₱400</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="celanyard.jpg">
+            <h4>CE Lanyrard</h4>
+            <p class="price">₱120</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="cecap.jpg">
+            <h4>CE Cap</h4>
+            <p class="price">₱250</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="cebuttonpins.jpg">
+            <h4>CE Button Pins</h4>
+            <p class="price">₱25</p>
+            <button>Add to Cart</button>
+        </div>
+        `;
+    }
+
+    else if (dept === "business") {
+        products = `
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CBA Shirt</h4>
+            <p class="price">₱450</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CBA Lanyard</h4>
+            <p class="price">₱99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CBA Lanyard</h4>
+            <p class="price">₱99</p>
+            <button>Add to Cart</button>
+        </div>
+        `;
+    }
+
+    else if (dept === "education") {
+        products = `
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CTE Shirt</h4>
+            <p class="price">₱300</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CTE Lanyard</h4>
+            <p class="price">₱100</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CTE Lanyard</h4>
+            <p class="price">₱99</p>
+            <button>Add to Cart</button>
+        </div>
+        `;
+    }
+
+    else if (dept === "ccs") {
+        products = `
+        <div class="card">
+            <img src="shirt.jpg">
+            <h4>IT Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="sh.jpg.jpg">
+            <h4>CS Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="lanyard.jpg">
+            <h4>CCS Lanyard</h4>
+            <p class="price">₱99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="lan.jpg">
+            <h4>CCS Lanyard</h4>
+            <p class="price">₱99</p>
+            <button>Add to Cart</button>
+        </div>
+        `;
+    }
+
+    else if (dept === "cswcd") {
+        products = `
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CSWCD Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CSWCD Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CSWCD Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        `;
+    }
+
+    else if (dept === "ca") {
+        products = `
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>Archi Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>Archi Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>Archi Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        `;
+    }
+
+    else if (dept === "cla") {
+        products = `
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CLA Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CLA Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="comingsoon.jpg">
+            <h4>CLA Shirt</h4>
+            <p class="price">₱350</p>
+            <button>Add to Cart</button>
+        </div>
+        `;
+    }
+
+    productList.innerHTML = products;
+}
+</script>
+
+</body>
+</html>
