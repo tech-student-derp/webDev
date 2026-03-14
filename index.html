@@ -10,7 +10,6 @@
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
     <h1>🏫 WMSU Merch</h1>
     <div>
@@ -20,7 +19,6 @@
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
     <h2>🎓 Wear Your College. Represent WMSU with Pride.</h2>
     <p>Official merchandise for every college in Western Mindanao State University.</p>
@@ -34,7 +32,6 @@
     <a class="btn" onclick="openLogin()">Login to Start Shopping</a>
 </section>
 
-<!-- BENEFITS -->
 <section class="benefits">
     <h3>Why Use WMSU Merch?</h3>
     <ul>
@@ -50,7 +47,6 @@
     </p>
 </section>
 
-<!-- PROOF -->
 <section class="proof">
     <h3>Trusted by WMSU Students</h3>
     <p>⭐ Partnered with different colleges and student organizations</p>
@@ -61,7 +57,6 @@
     </p>
 </section>
 
-<!-- HOW IT WORKS -->
 <section>
     <h3>How It Works</h3>
     <div class="steps">
@@ -74,7 +69,6 @@
     <p style="margin-top:30px;font-weight:600;">Simple. Organized. Proudly WMSU.</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>📍 Campus Store Location</p>
     <p>📧 Official Email</p>
@@ -88,7 +82,6 @@
     </p>
 </footer>
 
-<!-- LOGIN MODAL -->
 <div id="loginModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeLogin()">&times;</span>
@@ -131,12 +124,17 @@ function login(){
     var college = document.getElementById('college').value;
     var errorDiv = document.getElementById('loginError');
 
+    if (studentId.toLowerCase() === 'admin') {
+        errorDiv.textContent = '';
+        window.location.href = 'admin.html';
+        return;
+    }
+
     if(studentId === '' || college === ''){
         errorDiv.textContent = 'Please enter Student ID and select your college.';
         return;
     }
 
-    // For demo purposes: you can expand this for real authentication
     alert('Welcome, ' + studentId + ' from ' + college + '! You are now logged in.');
     closeLogin();
 }

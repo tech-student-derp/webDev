@@ -1,0 +1,154 @@
+:root {
+    --bg: #1a0a13;
+    --card: #180a0f;
+    --accent: #ff1744;
+    --failed: #ff1744;
+    --glass: rgba(255, 0, 80, 0.04);
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+body {
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(255,0,80,0.06), transparent),
+                            radial-gradient(900px 400px at 90% 90%, rgba(255,0,0,0.03), transparent),
+                            var(--bg);
+    color: #fbe9ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.card {
+    width: 100%;
+    max-width: 720px;
+    background: linear-gradient(180deg, rgba(255,0,80,0.02), rgba(255,0,0,0.01));
+    border: 1px solid rgba(255,0,80,0.04);
+    backdrop-filter: blur(6px);
+    padding: 40px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(60,0,23,0.6);
+    text-align: center;
+}
+
+.badge {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    background: linear-gradient(135deg, rgba(255,0,80,0.13), rgba(255,0,0,0.07));
+    border: 2px solid rgba(255,0,80,0.13);
+    animation: pop 900ms cubic-bezier(.2,.9,.3,1) 1;
+    color: var(--failed);
+    box-shadow: 0 8px 30px rgba(255,0,80,0.08), inset 0 -6px 18px rgba(0,0,0,0.18);
+}
+
+@keyframes pop {
+    0% { transform: scale(.2) rotate(-20deg); opacity: 0; }
+    60% { transform: scale(1.06) rotate(6deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); }
+}
+
+h1 {
+    margin: 6px 0 4px;
+    font-size: 22px;
+    letter-spacing: -0.2px;
+}
+p.lead {
+    margin: 0 0 16px;
+    color: #ffbfcf;
+    opacity: .95;
+}
+.amount {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255,0,80,0.08), rgba(255,0,0,0.03));
+    color: var(--failed);
+    font-weight: 700;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 18px rgba(60,0,23,0.5);
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 18px;
+}
+.btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid rgba(255,0,80,0.03);
+    color: #ffe6ee;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,0,80,0.08);
+}
+
+.confetti {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin-top: 18px;
+    overflow: hidden;
+}
+.confetti span {
+    position: absolute;
+    top: -30px;
+    font-size: 24px;
+    animation: confetti-fall 2.2s linear infinite;
+    opacity: 0;
+}
+.confetti span:nth-child(1){ left: 6%; animation-delay: 0.0s; }
+.confetti span:nth-child(2){ left: 18%; animation-delay: 0.15s; }
+.confetti span:nth-child(3){ left: 30%; animation-delay: 0.3s; }
+.confetti span:nth-child(4){ left: 42%; animation-delay: 0.45s; }
+.confetti span:nth-child(5){ left: 54%; animation-delay: 0.6s; }
+.confetti span:nth-child(6){ left: 66%; animation-delay: 0.75s; }
+.confetti span:nth-child(7){ left: 78%; animation-delay: 0.9s; }
+.confetti span:nth-child(8){ left: 90%; animation-delay: 1.05s; }
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(260px) rotate(520deg); opacity: 0; }
+}
+
+.stars {
+    position: absolute;
+    inset: 12px 18px auto auto;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+}
+.stars i {
+    position: absolute;
+    font-style: normal;
+    opacity: .12;
+    color: #fff;
+    font-size: 18px;
+    animation: float 3000ms ease-in-out infinite;
+}
+.stars i:nth-child(1){right:10px;top:8px;animation-delay:0ms}
+.stars i:nth-child(2){right:48px;top:30px;animation-delay:600ms;font-size:14px}
+.stars i:nth-child(3){right:18px;top:62px;animation-delay:300ms;font-size:12px}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+@media (prefers-reduced-motion: reduce) {
+    .confetti span, .badge, .stars i, .btn, .card { animation: none; transition: none }
+}
