@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WMSU Merch Admin – Recent Orders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .admin-header {
+            margin-bottom: 40px;
+            color: var(--primary);
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .orders-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .orders-table th, .orders-table td {
+            padding: 16px 12px;
+            text-align: left;
+        }
+        .orders-table th {
+            background: var(--secondary);
+            color: var(--white);
+            font-weight: 700;
+        }
+        .orders-table tr:nth-child(even) {
+            background: var(--light);
+        }
+        .orders-table tr:hover {
+            background: #e0f2f1;
+        }
+        .placeholder {
+            text-align: center;
+            color: #888;
+            font-size: 18px;
+            margin: 40px 0;
+        }
+        .admin-nav {
+            text-align: right;
+            margin-bottom: 20px;
+            padding-right: 8%;
+        }
+        .admin-nav a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 18px;
+        }
+        .admin-nav a:hover {
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>🛒 WMSU Merch Admin</h1>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#">Orders</a>
+            <a href="#">Logout</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="admin-header">Recent Orders & Purchases</div>
+        <div class="admin-nav">
+            <a href="#">Dashboard</a>
+            <a href="#">Manage Products</a>
+            <a href="#">Users</a>
+        </div>
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Student ID</th>
+                    <th>College</th>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Placeholder rows -->
+                <tr>
+                    <td>1001</td>
+                    <td>202312345</td>
+                    <td>College of Science</td>
+                    <td>College Hoodie</td>
+                    <td>1</td>
+                    <td>2026-03-01</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>202298765</td>
+                    <td>College of Engineering</td>
+                    <td>Engg T-shirt</td>
+                    <td>2</td>
+                    <td>2026-02-28</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                    <td>999</td>
+                    <td>202312111</td>
+                    <td>College of Education</td>
+                    <td>College Cap</td>
+                    <td>1</td>
+                    <td>2026-02-27</td>
+                    <td>Processing</td>
+                </tr>
+                <!-- More placeholder rows as needed -->
+            </tbody>
+        </table>
+        <div class="placeholder">
+            (This is a placeholder. Real order data will appear here for admin users.)
+        </div>
+    </section>
+
+    <footer>
+        <p>Admin Panel – WMSU Merch Portal</p>
+        <p class="copyright">
+            © 2026 WMSU Merch Portal – Western Mindanao State University
+        </p>
+    </footer>
+</body>
+</html>
